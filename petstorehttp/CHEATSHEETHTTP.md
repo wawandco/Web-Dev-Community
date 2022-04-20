@@ -55,6 +55,24 @@ http.HandleFunc("/pets", func(w http.ResponseWriter, r *http.Request){
 })
 ```
 
+### HTTP Method
+```go
+http.HandleFunc("/pets", func(w http.ResponseWriter, r *http.Request){
+    // process request.
+    if r.Method == "GET" {
+        // process GET request only.
+    }
+})
+```
+
+### Get URL query values
+```go
+http.HandleFunc("/pets", func(w http.ResponseWriter, r *http.Request){
+    // process request.
+    r.URL.Values()
+})
+```
+
 ### Create a custom server
 ```go
 s := &http.Server{
